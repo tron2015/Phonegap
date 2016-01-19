@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Acelerometro</title>
+	<link rel="stylesheet" href="">
+<script  type="text/javascript" src="phonegap.js"></script>	
+<script type="text/javascript" >
+	var elAcel;
+
+	document.addEventListener("deviceready", onDeviceReady,false);
+
+	function onDeviceReady(){
+		var opciones ={frequency:2000};
+
+		elAcel = navigator.accelerometer.watchAcceleration(alExito,alError,opciones);
+
+	}
+
+	function alExito(acelerometro){
+		var elemento= document.getElementsByName("resultado");
+		elemento.innerHTML("aceleracion x: "+acelerometro.x+"</br>"+"aceleracion y: "+acelerometro.y+"</br>"+"aceleracion z: "+acelerometro.z+"</br>");
+
+		var acelX = elemento.offsetLeft + acelerometro.x;
+		var acelY = elemento.offsetTop + acelerometro.y;
+		elemento.style.left= acelX+"px";
+		elemento.style.top = acelY+"py";
+		
+	}
+
+	function alError(){
+		alert("HUBO UN ERROR")
+	}
+
+</script>
+</head>
+
+<style>
+#info{
+	position: relative;
+	background-color: #BEDC15;
+}	
+
+</style>
+<body>
+
+<div id="info">
+	
+INFO ACELEROMETRO
+
+</div>
+
+</body>
+</html>
