@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PhoneGap Event Example</title>
+
+    <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    function onDeviceReady() {
+        // Register the event listeners
+        document.addEventListener("pause", onPause, false);
+        document.addEventListener("resume", onResume, false);
+    }
+
+    // Handle the pause
+    //
+    function onPause() {
+      alert("Paused!");
+    }
+
+    // Handle the resume
+    //
+    function onResume() {
+      alert("Resumed!");
+    }
+
+
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
