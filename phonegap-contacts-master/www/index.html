@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>	
+	<meta charset="utf-8">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, target-densitydpi=device-dpi" />
+
+	<title>PhoneGap</title>
+
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="lib/jquery-mobile/css/jquery.mobile-1.4.0.min.css" />
+	
+	<script type="text/javascript" src="lib/jquery-mobile/js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="lib/jquery-mobile-router/js/jquery.mobile.router.min.js"></script>
+	<script type="text/javascript" src="lib/jquery-mobile/js/jquery.mobile-1.4.0.min.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+</head>
+<body>
+    <div data-role="page" id="agenda">
+        <div data-role="header" data-position="fixed">
+            <h1>Contactos</h1>
+        </div>
+        <div data-role="content">
+            <fieldset>
+                <input type="text" id="filter" name="filter" placeholder="Filtro" />
+            </fieldset>
+            <button id="buscar" data-role="button">Buscar</button>
+            <ul data-role="listview" id="contactList" style="margin-top: 20px;"></ul>
+            <button data-role="button" id="cambiarACreacion">Ir a creacion de contactos</button>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h1>Curso PhoneGap</h1>
+        </div>
+    </div>
+
+    <div data-role="page" id="crearContacto">
+        <div data-role="header" data-position="fixed">
+            <h1>Contactos</h1>
+        </div>
+        <div data-role="content">
+            <fieldset>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre de contacto" />
+                <input type="text" id="telefono" name="telefono" placeholder="Telefono" />
+            </fieldset>
+            <button id="crear" data-role="button">Crear</button>
+            <button id="cambiarABusqueda" data-role="button" class="volver">Volver</button>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h1>Curso PhoneGap</h1>
+        </div>
+    </div>
+
+    <div data-role = "page" id="resultadosBusqueda">
+        <div data-role="header" data-position="fixed">
+            <h1>Resultados</h1>
+        </div>
+        <div data-role="content">
+            <br>
+            <ul data-role="listview" id="tabla"></ul>
+            <br>
+            <button id="volverABusqueda" data-role="button" class="volver">Volver</button>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h1>Curso PhoneGap</h1>
+        </div>
+    </div>
+
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="lib/fastclick/js/fastclick.js"></script>
+<script type="text/javascript" src="lib/handlebars/js/handlebars-v1.3.0.js"></script>
+
+<script type="text/javascript">
+	phonegap.app.initialize();
+</script>
+
+</body>
+</html>
