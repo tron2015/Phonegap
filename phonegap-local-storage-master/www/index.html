@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>	
+	<meta charset="utf-8">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, target-densitydpi=device-dpi" />
+
+	<title>PhoneGap</title>
+
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="lib/jquery-mobile/css/jquery.mobile-1.4.0.min.css" />
+	
+	<script type="text/javascript" src="lib/jquery-mobile/js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="lib/jquery-mobile-router/js/jquery.mobile.router.min.js"></script>
+	<script type="text/javascript" src="lib/jquery-mobile/js/jquery.mobile-1.4.0.min.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+</head>
+<body>
+    <div data-role="page" id="scheduler">
+        <div data-role="header" data-position="fixed">
+            <h1>Student Eval</h1>
+        </div>
+
+        <div data-role="content">
+            <fieldset>
+                <input type="text" id="name" placeholder="First and Last Name" />
+                <input type="text" id="results" placeholder="Results" />
+            </fieldset>
+            <button data-role="button" id="search" onclick="phonegap.app.newPair();">Add Key-Value</button>
+            <button data-role="button" id="clean" onclick="phonegap.app.clean();">Clean</button>
+            <ul data-role="listview" id="table" style="margin-top: 20px;">
+            </ul>
+        </div>
+    </div>
+
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="lib/fastclick/js/fastclick.js"></script>
+<script type="text/javascript" src="lib/handlebars/js/handlebars-v1.3.0.js"></script>
+
+<script type="text/javascript">
+	phonegap.app.initialize();
+</script>
+
+</body>
+</html>
